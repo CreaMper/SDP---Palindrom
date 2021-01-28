@@ -9,14 +9,12 @@ namespace Zadanko
             int size = var.Length;
             int iteracje = size / 2;
 
-            for(int i = iteracje; i > 0; i--)
-            {
-                if (var[i] != var[size - i - 1])
-                {
-                    return "Nope, to nie jest palindrom";
-                }
-            }
 
+            for (int i = 0; i < size / 2; i++)
+            {
+                if (var.ToLower()[i] != var.ToLower()[size - i - 1])
+                    return "Nope, to nie jest palindrom";
+            }
             return "Tak, to jest palindrom";
         }
 
