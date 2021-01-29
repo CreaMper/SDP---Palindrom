@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Zadanko
 {
@@ -6,9 +7,13 @@ namespace Zadanko
     {
         public string Check(string var)
         {
+            if (var == "")
+                return "Nope, to nie jest palindrom";
+
+            var = String.Concat(var.Where(c => !Char.IsWhiteSpace(c)));
             int size = var.Length;
             int iteracje = size / 2;
-
+            
 
             for (int i = 0; i < size / 2; i++)
             {
